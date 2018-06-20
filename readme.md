@@ -1,13 +1,15 @@
-# The front end for worthawatch.today 
+# The front end for worthawatch.today
 
-This is deployed with netlify. There are no build steps yet.
+This is built and deployed with netlify.
 
-To deploy to s3 at wasitclose.co.uk:
+## Deployment process
 
-`aws s3 cp --region eu-west-1 --profile personal static/index.html s3://wasitclose.co.uk/index.html`
+The build process is configured in npm scripts and the netlify.toml config file.
+
+The master branch has continuous deployment set up for prod (for both the site and the lambda functions). Branch builds are deployed when commits are pushed up to this repo.
 
 ## Testing
 
 The following url can be passed to return a date with some nba games:
 
-http://wasitclose.co.uk/?date=20160429
+http://www.worthawatch.today?date=20160429
