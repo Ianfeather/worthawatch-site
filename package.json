@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist/ && mkdir dist && cp -r src/static-site dist/static-site"
+    "build": "rm -rf public/ && cp -r src/static-site public"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ianfeather/worthawatch-site/issues"
   },
-  "homepage": "https://github.com/Ianfeather/worthawatch-site#readme"
+  "homepage": "https://github.com/Ianfeather/worthawatch-site#readme",
+  "dependencies": {
+    "netlify-lambda": "^0.4.0"
+  }
 }
