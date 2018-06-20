@@ -97,11 +97,6 @@
       </div>
     </div>
 
-    <div class="flex center flex-column footer">
-      <p>Test</p>
-      <p>The code for this site is Open Source and available on GitHub. It's built on AWS Lambda - <a href="https://github.com/Ianfeather/serverless-nba-scores">https://github.com/Ianfeather/serverless-nba-scores</a></p>
-    </div>
-
     <script type="text/javascript">
       var zeroPad = function(num) {
         if (num < 10) {
@@ -178,7 +173,7 @@
 
       var oReq = new XMLHttpRequest();
       oReq.addEventListener("load", reqListener);
-      oReq.open("GET", `https://wa2ssgr9c7.execute-api.eu-west-1.amazonaws.com/dev/scores?date=${getDate()}`);
+      oReq.open("GET", `/.netlify/functions/fetch-scores?date=${getDate()}`);
       oReq.send();
     </script>
 
