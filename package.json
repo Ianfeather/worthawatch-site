@@ -1,8 +1,7 @@
 {
   "name": "worthawatch-site",
   "version": "1.0.0",
-  "description": "This is deployed with netlify. There are no build steps yet.",
-  "main": "index.js",
+  "description": "This is deployed with netlify.",
   "scripts": {
     "test": "mocha test/**/*.test.js",
     "build-functions": "netlify-lambda build src/functions",
@@ -21,7 +20,7 @@
   },
   "homepage": "https://github.com/Ianfeather/worthawatch-site#readme",
   "dependencies": {
-    "netlify-lambda": "git://github.com/ianfeather/netlify-lambda.git",
+    "netlify-lambda": "^0.4.0",
     "request": "^2.87.0"
   },
   "devDependencies": {
