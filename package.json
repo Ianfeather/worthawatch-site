@@ -4,7 +4,7 @@
   "description": "This is deployed with netlify. There are no build steps yet.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/**/*.test.js",
     "build-functions": "netlify-lambda build src/functions",
     "build-site": "cp -r src/static-site public",
     "clean": "rm -rf public/",
@@ -23,5 +23,9 @@
   "dependencies": {
     "netlify-lambda": "^0.4.0",
     "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   }
 }

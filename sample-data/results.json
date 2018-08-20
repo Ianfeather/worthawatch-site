@@ -1,0 +1,138 @@
+{
+	"events_date": "2016-04-29T00:00:00-04:00",
+	"count": 2,
+	"event": [
+    {
+      "event_id": "20160429-toronto-raptors-at-indiana-pacers",
+      "event_status": "completed",
+      "sport": "NBA",
+      "start_date_time": "2016-04-29T19:30:00-04:00",
+      "season_type": "post",
+      "away_team": {
+        "team_id": "toronto-raptors",
+        "abbreviation": "TOR",
+        "active": true,
+        "first_name": "Toronto",
+        "last_name": "Raptors",
+        "conference": "East",
+        "division": "Atlantic",
+        "site_name": "Air Canada Centre",
+        "city": "Toronto",
+        "state": "Ontario",
+        "full_name": "Toronto Raptors"
+      },
+      "home_team": {
+        "team_id": "indiana-pacers",
+        "abbreviation": "IND",
+        "active": true,
+        "first_name": "Indiana",
+        "last_name": "Pacers",
+        "conference": "East",
+        "division": "Central",
+        "site_name": "Bankers Life Fieldhouse",
+        "city": "Indianapolis",
+        "state": "Indiana",
+        "full_name": "Indiana Pacers"
+      },
+      "site": {
+        "capacity": 18165,
+        "surface": "Hardwood",
+        "name": "Bankers Life Fieldhouse",
+        "city": "Indianapolis",
+        "state": "Indiana"
+      },
+      "away_period_scores": [22, 22, 20, 19],
+      "home_period_scores": [20, 20, 31, 30],
+      "away_points_scored": 83,
+      "home_points_scored": 101
+    },
+    {
+      "event_id": "20180531-cleveland-cavaliers-at-golden-state-warriors",
+      "event_status": "completed",
+      "sport": "NBA",
+      "start_date_time": "2018-05-31T21:00:00-04:00",
+      "season_type": "post",
+      "away_team": {
+        "team_id": "cleveland-cavaliers",
+        "abbreviation": "CLE",
+        "active": true,
+        "first_name": "Cleveland",
+        "last_name": "Cavaliers",
+        "conference": "East",
+        "division": "Central",
+        "site_name": "Quicken Loans Arena",
+        "city": "Cleveland",
+        "state": "Ohio",
+        "full_name": "Cleveland Cavaliers"
+      },
+      "home_team": {
+        "team_id": "golden-state-warriors",
+        "abbreviation": "GS",
+        "active": true,
+        "first_name": "Golden State",
+        "last_name": "Warriors",
+        "conference": "West",
+        "division": "Pacific",
+        "site_name": "Oracle Arena",
+        "city": "Oakland",
+        "state": "California",
+        "full_name": "Golden State Warriors"
+      },
+      "site": {
+        "capacity": 19596,
+        "surface": "Hardwood",
+        "name": "Oracle Arena",
+        "city": "Oakland",
+        "state": "California"
+      },
+      "away_period_scores": [30, 26, 22, 29, 7],
+      "home_period_scores": [29, 27, 28, 23, 17],
+      "away_points_scored": 114,
+      "home_points_scored": 124
+    },
+    {
+      "event_id": "20180214-washington-wizards-at-new-york-knicks",
+      "event_status": "completed",
+      "sport": "NBA",
+      "start_date_time": "2018-02-14T19:30:00-05:00",
+      "season_type": "regular",
+      "away_team": {
+        "team_id": "washington-wizards",
+        "abbreviation": "WAS",
+        "active": true,
+        "first_name": "Washington",
+        "last_name": "Wizards",
+        "conference": "East",
+        "division": "Southeast",
+        "site_name": "Verizon Center",
+        "city": "Washington",
+        "state": "District of Columbia",
+        "full_name": "Washington Wizards"
+      },
+      "home_team": {
+        "team_id": "new-york-knicks",
+        "abbreviation": "NY",
+        "active": true,
+        "first_name": "New York",
+        "last_name": "Knicks",
+        "conference": "East",
+        "division": "Atlantic",
+        "site_name": "Madison Square Garden",
+        "city": "New York",
+        "state": "New York",
+        "full_name": "New York Knicks"
+      },
+      "site": {
+        "capacity": 19673,
+        "surface": "Hardwood",
+        "name": "Madison Square Garden",
+        "city": "New York",
+        "state": "New York"
+      },
+      "away_period_scores": [26, 25, 39, 28],
+      "home_period_scores": [39, 33, 15, 26],
+      "away_points_scored": 118,
+      "home_points_scored": 113
+    }
+  ]
+}
