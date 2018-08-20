@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Yesterday's NBA Games</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
@@ -160,8 +160,8 @@
           }
 
           return templ(gameTemplate, {
-            homeTeam: game.home.name.toLowerCase(),
-            awayTeam: game.away.name.toLowerCase(),
+            homeTeam: game.home.img.toLowerCase(),
+            awayTeam: game.away.img.toLowerCase(),
             close: close
           })
         });
