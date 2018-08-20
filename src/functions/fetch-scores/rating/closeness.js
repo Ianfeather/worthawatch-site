@@ -33,7 +33,7 @@ module.exports = (event) => {
     return smoothRating((BASE_RATING - 10) * comebackMultiplier);
   }
 
-  // For everything else we don't bother with comebackMultiplier
+  // Bigger differences
   return smoothRating((BASE_RATING - (diff * 1.4)) * comebackMultiplier);
 
 }
