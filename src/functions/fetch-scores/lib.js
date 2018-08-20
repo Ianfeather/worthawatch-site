@@ -12,7 +12,7 @@ module.exports = {
 
     request.get(dateUrl, opts, function (error, response, body) {
       if (error || response.statusCode !== 200) {
-        console.log('ERROR: API error: ' + err);
+        console.log('ERROR: API error: ' + error);
         return cb(null, { error: error });
       }
       return cb(null, { games: prepareGameData(JSON.parse(body)) });
