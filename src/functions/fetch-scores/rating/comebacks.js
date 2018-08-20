@@ -1,9 +1,5 @@
 module.exports = function(event) {
 
-  // Change this so that we can distinguis between runaway wins
-  // and comebacks. Figure out who won and then see if they were down
-  // by a certain amount
-
   let winningTeam = event.home_points_scored > event.away_points_scored ? 'home' : 'away';
   let losingTeam = event.home_points_scored > event.away_points_scored ? 'away' : 'home';
 
@@ -25,10 +21,6 @@ module.exports = function(event) {
   if (quarterDiffs[1] < -19) {
     return 1.05;
   }
-
-
-
-
 
   return 1;
 
