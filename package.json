@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Ianfeather/worthawatch-site#readme",
   "dependencies": {
-    "netlify-lambda": "^0.4.0",
+    "netlify-lambda": "git://github.com/ianfeather/netlify-lambda.git",
     "request": "^2.87.0"
   },
   "devDependencies": {
