@@ -14,9 +14,6 @@
 .mb60 {
   margin-bottom: 60px;
 }
-.spring-2 { flex: 2; }
-.spring-3 { flex: 3; }
-.spring-4 { flex: 4; }
 
 html {
   --light-grey: #efefef;
