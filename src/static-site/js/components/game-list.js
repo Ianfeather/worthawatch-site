@@ -40,7 +40,7 @@ export default class GameList extends Component {
     return (
       <div>
         <div className='w60'>
-          <h2 className='title center flex mb60'>Yesterday's games:</h2>
+          <h2 className='title center flex mb60'>Yesterday:</h2>
         </div>
         <div className="games">
           {
