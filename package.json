@@ -5,8 +5,10 @@
   "scripts": {
     "test": "mocha test/**/*.test.js",
     "build-functions": "netlify-lambda build src/functions",
-    "build-site": "cp -r src/static-site public",
+    "build-site": "npm run bundle && cp -r src/static-site public",
     "clean": "rm -rf public/",
+    "bundle": "rollup -c",
+    "bundle-watch": "rollup -c --watch",
     "build": "npm run clean && npm run build-site && npm run build-functions"
   },
   "repository": {
@@ -24,7 +26,15 @@
     "request": "^2.87.0"
   },
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "preact": "^8.3.1",
+    "rollup": "^0.65.0",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
   }
 }
