@@ -1,0 +1,154 @@
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.center {
+  justify-content: center;
+  text-align: center;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb60 {
+  margin-bottom: 60px;
+}
+.spring-2 { flex: 2; }
+.spring-3 { flex: 3; }
+.spring-4 { flex: 4; }
+
+html {
+  --light-grey: #efefef;
+  --dark-grey: #5D576B;
+  --green: #93e282;
+  --pink: #F7567C;
+  --red: #f39c9c;
+  --blue: #99E1D9;
+  --yellow: #FFFAE3;
+}
+
+body {
+  background: var(--light-grey);
+  font-family: Avenir, 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding: 20px 40px 30px;
+  margin-bottom: 60px;
+  border-bottom: 2px solid #78758C;
+  background-color: var(--dark-grey);
+}
+
+.site-title {
+  margin: 0;
+  color: var(--pink);
+  font-size: 40px;
+}
+
+.site-subtitle {
+  margin: 0;
+  color: var(--light-grey);
+}
+
+.footer {
+  padding: 20px 40px 30px;
+  margin-top: 60px;
+  border-top: 2px solid #78758C;
+}
+
+.w60 { width: 60%; }
+
+.games {
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+}
+
+.game {
+  background: white;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 10px 10px;
+  position: relative;
+  margin-bottom: 40px;
+
+}
+
+.team {
+  flex: 2;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.team img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.team-name {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.rating {
+  font-size: 50px;
+  font-weight: bold;
+  width: 80px;
+  height: 80px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -30px;
+}
+
+.rating-high {
+  background-color: var(--green)
+}
+
+.rating-medium {
+  background-color: var(--blue)
+}
+
+.rating-low {
+  background-color: var(--red)
+}
+
+.no-results {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (min-width: 700px) {
+  .game {
+    flex-direction: row;
+    padding: 30px 10px;
+  }
+  .team {
+    margin-bottom: 0;
+  }
+  .team-home {
+    justify-content: flex-end;
+  }
+  .team-home img {
+    order: 2;
+  }
+  .rating {
+    top: auto;
+    left: -30px;
+  }
+}
+
+@media (min-width: 900px) {
+  .games {
+    width: 800px;
+  }
+}
