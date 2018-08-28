@@ -39,17 +39,6 @@ body {
   background-color: var(--dark-grey);
 }
 
-.site-title {
-  margin: 0;
-  color: var(--pink);
-  font-size: 40px;
-}
-
-.site-subtitle {
-  margin: 0;
-  color: var(--light-grey);
-}
-
 .footer {
   padding: 20px 40px 30px;
   margin-top: 60px;

@@ -1,5 +1,6 @@
-public/
-src/static-site/js/bundle.js
+build/
 node_modules/
 functions/
 !src/functions
+/*.log
+*.lock

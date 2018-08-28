@@ -1,26 +1,23 @@
 {
   "name": "worthawatch-site",
   "version": "1.0.0",
-  "description": "This is deployed with netlify.",
-  "scripts": {
-    "test": "mocha test/**/*.test.js",
-    "build-functions": "netlify-lambda build src/functions",
-    "build-site": "npm run bundle && cp -r src/static-site public",
-    "clean": "rm -rf public/",
-    "bundle": "rollup -c",
-    "bundle-watch": "rollup -c --watch",
-    "build": "npm run clean && npm run build-site && npm run build-functions"
-  },
+  "description": "worthawatch.today",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ianfeather/worthawatch-site.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ianfeather/worthawatch-site/issues"
+  "scripts": {
+    "dev": "preact watch --src=src/site --template src/site/html/template.html",
+    "build": "npm run build-site && npm run build-functions",
+    "build-functions": "netlify-lambda build src/functions",
+    "build-site": "preact build --src=src/site --template src/site/html/template.html",
+    "lint": "eslint src/site",
+    "test": "npm run test-functions && npm run test-ui",
+    "test-functions": "mocha test/**/*.test.js",
+    "test-ui": "jest ./src/site/tests"
   },
-  "homepage": "https://github.com/Ianfeather/worthawatch-site#readme",
   "dependencies": {
     "netlify-lambda": "^0.4.0",
     "request": "^2.87.0"
@@ -30,11 +27,59 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
+    "eslint": "^4.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-preact": "^1.1.6",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "if-env": "^1.0.0",
+    "jest": "^21.2.1",
     "mocha": "^5.2.0",
     "preact": "^8.3.1",
+    "preact-cli": "^2.2.1",
+    "preact-compat": "^3.17.0",
+    "preact-render-spy": "^1.2.1",
+    "preact-router": "^2.5.7",
     "rollup": "^0.65.0",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-json": "^3.0.0",
     "rollup-plugin-node-resolve": "^3.3.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "standard-preact"
+    ]
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "<rootDir>/src/site/tests/__mocks__/browserMocks.js"
+    ],
+    "testURL": "http://localhost:8080",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^./style$": "identity-obj-proxy",
+      "^preact$": "<rootDir>/node_modules/preact/dist/preact.min.js",
+      "^react$": "preact-compat",
+      "^react-dom$": "preact-compat",
+      "^create-react-class$": "preact-compat/lib/create-react-class",
+      "^react-addons-css-transition-group$": "preact-css-transition-group"
+    }
   }
 }

@@ -2,10 +2,7 @@
   "presets": [
     ["env", {
       "modules": false
-    }]
+    }],
+    ["preact-cli/babel", { "modules": "commonjs" }]
   ],
-  "plugins": [
-    "external-helpers",
-    [ "transform-react-jsx", { "pragma":"h" } ]
-  ]
 }
