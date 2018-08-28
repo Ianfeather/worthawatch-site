@@ -39,9 +39,7 @@ export default class GameList extends Component {
   render({ games }) {
     return (
       <div>
-        <div className='w60'>
-          <h2 className='title center flex mb60'>Yesterday:</h2>
-        </div>
+        <h2 className='title center flex mb60'>Yesterday:</h2>
         <div className="games">
           {
             games.sort(compareRatings).map((game) => (
