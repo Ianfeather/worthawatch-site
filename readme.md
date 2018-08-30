@@ -14,23 +14,26 @@ The following url can be passed to return a date with some nba games:
 
 http://www.worthawatch.today?date=20160429
 
-## CLI Commands
+## Local Dev
+
+Locally you can use the `?localDev` querystring to give you some data to work with.
 
 ``` bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run preact-dev
+# serve the static site with hot reload at localhost:8080
+npm run dev
 
-# build for production with minification
-npm run preact-build
+# build the site and the lambda
+npm run build
 
-# test the production build locally
-npm run preact-serve
+# build the site only
+npm run build-site
 
-# run tests with jest and preact-render-spy
-npm run preact-test
+# build the functions only
+npm run build-functions
+
+# run tests
+npm run test
 ```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).

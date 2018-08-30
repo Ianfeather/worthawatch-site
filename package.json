@@ -14,9 +14,9 @@
     "build-functions": "netlify-lambda build src/functions",
     "build-site": "preact build --src=src/site --template src/site/html/template.html",
     "lint": "eslint src/site",
-    "test": "npm run test-functions && npm run test-ui",
+    "test": "npm run test-functions && npm run test-site",
     "test-functions": "mocha test/**/*.test.js",
-    "test-ui": "jest ./src/site/tests"
+    "test-site": "jest ./src/site/tests"
   },
   "dependencies": {
     "netlify-lambda": "^0.4.0",
