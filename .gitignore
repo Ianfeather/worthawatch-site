@@ -2,5 +2,6 @@ build/
 node_modules/
 functions/
 !src/functions
+!test/functions
 /*.log
 *.lock
