@@ -1,4 +1,4 @@
-const calculateCloseness = require('./rating/closeness');
+const getRating = require('./rating/aggregate')
 
 module.exports = (data) => {
   return data.event.map((event) => {
@@ -14,15 +14,14 @@ module.exports = (data) => {
     }
 
     if (event.event_status !== 'completed') {
-      game.completed = false;
-      return game;
+      game.completed = false
+      return game
     } else {
-      game.completed = true;
+      game.completed = true
     }
 
-    game.rating = calculateCloseness(event);
+    game.rating = getRating(event)
 
-    return game;
-  });
+    return game
+  })
 }
-

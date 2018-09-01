@@ -4,7 +4,7 @@ const expect = require('chai').expect
 const createEvent = require('./utils').createEvent
 const closeness = require('../../../src/functions/fetch-scores/rating/closeness')
 
-const scores = (home, away) => closeness(createEvent(home, away))
+const scores = (home, away) => closeness(createEvent(home, away), 80)
 
 describe('Closeness Rating', () => {
   describe('Total Scores', () => {

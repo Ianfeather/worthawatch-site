@@ -1,8 +1,6 @@
 const getComebackMultiplier = require('./comebacks')
 const getOvertimeMultiplier = require('./overtime')
 
-const BASE_RATING = 80
-
 function smoothRating (rating) {
   return parseInt(Math.min(rating, 100), 10)
 }
@@ -11,7 +9,7 @@ function isOvertime (event) {
   return event.away_period_scores.length > 4
 }
 
-module.exports = (event) => {
+module.exports = (event, BASE_RATING = 80) => {
   let diff = Math.abs(event.home_points_scored - event.away_points_scored)
 
   let comebackMultiplier = getComebackMultiplier(event)
