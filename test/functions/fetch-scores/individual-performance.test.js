@@ -15,10 +15,6 @@ describe('Individual Performance Rating', () => {
       expect(withStats([{ points: 50 }, { points: 50 }])).to.equal(100)
     })
 
-    it('40, 50', () => {
-      expect(withStats([{ points: 40 }, { points: 50 }])).to.equal(95)
-    })
-
     it('40, 40', () => {
       expect(withStats([{ points: 40 }, { points: 40 }])).to.equal(90)
     })
@@ -34,29 +30,9 @@ describe('Individual Performance Rating', () => {
     it('35, 45, 55', () => {
       expect(withStats([{ points: 35 }, { points: 45 }, { points: 55 }])).to.equal(98)
     })
-  })
 
-  describe('assists', () => {
-    it('10', () => {
-      expect(withStats([{ assists: 10 }])).to.equal(80)
-    })
-
-    it('20', () => {
-      expect(withStats([{ assists: 20 }])).to.equal(90)
-    })
-  })
-
-  describe('big triple doubles', () => {
-    it('10, 10, 10', () => {
-      expect(withStats([
-        { points: 10 },
-        { assists: 10 },
-        { rebounds: 10 }
-      ])).to.equal(80)
-    })
-
-    it('28, 10, 10', () => {
-      expect(withStats([ { points: 28, assists: 10, rebounds: 10 } ])).to.equal(90)
+    it('40 TD, 50', () => {
+      expect(withStats([{ points: 40, assists: 10, rebounds: 10 }, { points: 50 }])).to.equal(100)
     })
   })
 })

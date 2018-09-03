@@ -47,7 +47,7 @@ describe('Closeness Rating', () => {
     })
 
     it('down 20 after three, win by 5', () => {
-      expect(scores([25, 25, 25, 25], [25, 25, 0, 55])).to.equal(77)
+      expect(scores([25, 25, 25, 25], [25, 25, 0, 55])).to.equal(82)
     })
 
     it('down 20 after three, win by 20 (should be higher!!)', () => {

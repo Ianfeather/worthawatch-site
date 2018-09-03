@@ -25,8 +25,13 @@ module.exports = (event, BASE_RATING = 80) => {
     return smoothRating(BASE_RATING * comebackMultiplier)
   }
 
+  // Close but not decided on the last plays
+  if (diff < 7) {
+    return smoothRating((BASE_RATING - 5) * comebackMultiplier)
+  }
+
   // Close but not a buzzer-beater loses 10 points
-  if (diff < 6) {
+  if (diff < 10) {
     return smoothRating((BASE_RATING - 10) * comebackMultiplier)
   }
 
