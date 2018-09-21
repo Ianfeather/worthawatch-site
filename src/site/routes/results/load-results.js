@@ -36,6 +36,8 @@ export default function loadResults () {
     return Promise.resolve(localResults)
   }
 
+  // local dev
+  // return fetch(`http://localhost:8081/fetch-scores.json`)
   return fetch(`/.netlify/functions/fetch-scores?date=${getDate()}`)
     .then(res => res.json())
 }

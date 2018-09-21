@@ -1,6 +1,6 @@
 {
-  "name": "site",
-  "short_name": "site",
+  "name": "Worth a Watch?",
+  "short_name": "Worth a Watch?",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
