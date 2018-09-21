@@ -1,3 +1,5 @@
+/* global window */
+
 import { h, Component } from 'preact'
 
 import loadResults from './load-results'
@@ -20,6 +22,10 @@ export default class Results extends Component {
         console.error(e)
         this.setState({ games: [], fetching: false })
       })
+
+    window.addEventListener('beforeinstallprompt', () => {
+      console.log('BEFORE INSTALL EVENT')
+    })
   }
 
   render (props, state) {
