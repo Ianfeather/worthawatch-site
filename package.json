@@ -12,7 +12,7 @@
     "dev": "preact watch --src=src/site --template src/site/html/template.html",
     "build": "npm run build-site && npm run build-functions",
     "build-functions": "netlify-lambda build src/functions",
-    "build-site": "preact build --src=src/site --template src/site/html/template.html",
+    "build-site": "preact build --src=src/site --template src/site/html/template.html --no-service-worker",
     "lint": "eslint src/site",
     "test": "npm run test-functions && npm run test-site",
     "test-functions": "mocha test/**/*.test.js",
@@ -44,11 +44,7 @@
     "preact-cli": "^2.2.1",
     "preact-compat": "^3.17.0",
     "preact-render-spy": "^1.2.1",
-    "preact-router": "^2.5.7",
-    "rollup": "^0.65.0",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-json": "^3.0.0",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "preact-router": "^2.5.7"
   },
   "eslintConfig": {
     "extends": [
