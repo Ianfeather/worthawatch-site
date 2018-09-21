@@ -1,21 +1,23 @@
-const request = require('request')
+const AWS = require('aws-sdk')
+const dynamodb = new AWS.DynamoDB.DocumentClient()
 const prepareGameData = require('./prepare-game-data')
 
 module.exports = {
   getScores: function (event, cb) {
-    var dateUrl = 'https://erikberg.com/events.json?date=' + event.queryStringParameters.date + '&sport=nba'
-
-    var opts = {
-      auth: { bearer: process.env.ERIKBERG_AUTH_TOKEN },
-      headers: { 'User-Agent': 'ianfeather' }
+    var getParams = {
+      AttributesToGet: [ 'games', 'completed' ],
+      TableName: 'worthawatch-import-prod',
+      Key: {
+        'date': event.queryStringParameters.date
+      }
     }
 
-    request.get(dateUrl, opts, function (error, response, body) {
-      if (error || response.statusCode !== 200) {
+    dynamodb.get(getParams, function (error, data) {
+      if (error) {
         console.log('ERROR: API error: ' + error)
         return cb(null, { error: error })
       }
-      return cb(null, { games: prepareGameData(JSON.parse(body)) })
+      return cb(null, { games: prepareGameData(data) })
     })
   }
 }
