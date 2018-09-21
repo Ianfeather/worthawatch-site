@@ -21,6 +21,7 @@
     "test-site": "jest ./src/site/tests"
   },
   "dependencies": {
+    "aws-sdk": "^2.320.0",
     "netlify-lambda": "^0.4.0",
     "request": "^2.87.0"
   },
