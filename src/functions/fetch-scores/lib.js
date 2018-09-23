@@ -12,7 +12,7 @@ const dynamodb = new AWS.DynamoDB.DocumentClient()
 module.exports = {
   getScores: function (event, cb) {
     var getParams = {
-      AttributesToGet: [ 'games', 'completed' ],
+      AttributesToGet: [ 'events' ],
       TableName: 'worthawatch-import-prod',
       Key: {
         'date': event.queryStringParameters.date
@@ -24,7 +24,12 @@ module.exports = {
         console.log('ERROR: API error: ' + error)
         return cb(null, { error: error })
       }
-      return cb(null, { games: prepareGameData(data) })
+
+      if (!data.Item) {
+        return cb(null, { games: [] })
+      }
+
+      return cb(null, { games: prepareGameData(data.Item.events) })
     })
   }
 }
