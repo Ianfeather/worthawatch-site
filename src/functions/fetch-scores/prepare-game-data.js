@@ -1,7 +1,7 @@
 const getRating = require('./rating/aggregate')
 
-module.exports = (data) => {
-  return data.event.map((event) => {
+module.exports = (events) => {
+  return events.map((event) => {
     let game = {
       home: {
         name: `${event.home_team.first_name} ${event.home_team.last_name}`,
