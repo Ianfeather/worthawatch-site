@@ -1,5 +1,4 @@
 const AWS = require('aws-sdk')
-const dynamodb = new AWS.DynamoDB.DocumentClient()
 const prepareGameData = require('./prepare-game-data')
 
 AWS.config.update({
@@ -7,6 +6,8 @@ AWS.config.update({
   secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY,
   region: 'us-east-1'
 })
+
+const dynamodb = new AWS.DynamoDB.DocumentClient()
 
 module.exports = {
   getScores: function (event, cb) {
