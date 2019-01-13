@@ -38,7 +38,7 @@ describe('Integration', () => {
 
   it('GSWBOS_20180127 - 4pt win - point guard duel', () => {
     expect(getRating(realGames.GSWBOS_20180127))
-      .to.be.greaterThan(85).and.to.be.lessThan(90)
+      .to.be.greaterThan(85).and.to.be.lessThan(94)
   })
 
   it('OKCDEN_20180201 - comeback to lose to a game winning 3', () => {
@@ -63,7 +63,7 @@ describe('Integration', () => {
 
   it('LALGSW_20171218 - buzzer beater win by 2 in OT', () => {
     expect(getRating(realGames.LALGSW_20171218))
-      .to.be.greaterThan(85).and.to.be.lessThan(95)
+      .to.be.greaterThan(87).and.to.be.lessThan(97)
   })
 
   it('LALGSW_20171129 - win by 4 in OT', () => {
