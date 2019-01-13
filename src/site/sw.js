@@ -1,6 +1,6 @@
 /* global caches, self, fetch */
 
-const PRECACHE = 'precache-v1'
+const PRECACHE = 'precache-v2'
 const RUNTIME = 'runtime'
 
 // Proactively cache certain requests
