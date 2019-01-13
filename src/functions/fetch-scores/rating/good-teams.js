@@ -5,13 +5,13 @@ const goodTeams = {
   BOS: 5,
 
   PHI: 3,
-  POR: 3,
   OKC: 3,
-  UTA: 3,
+  DEN: 3,
+  TOR: 3,
+  MIL: 3,
 
-  TOR: 2,
-  MIL: 2,
-  DEN: 2,
+  POR: 2,
+  UTA: 2,
   DAL: 2 // Lukaaaaaa
 }
 
