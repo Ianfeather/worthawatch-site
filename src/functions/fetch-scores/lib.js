@@ -25,6 +25,9 @@ module.exports = {
         return cb(null, { error: error })
       }
 
+      console.log('**** data.Item')
+      console.log(data.Item)
+
       if (!data.Item) {
         return cb(null, { games: [] })
       }
