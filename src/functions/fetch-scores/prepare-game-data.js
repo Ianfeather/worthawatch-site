@@ -12,17 +12,13 @@ module.exports = ({events}) => {
       away: {
         name: `${event.away_team.first_name} ${event.away_team.last_name}`,
         img: event.away_team.abbreviation
-      }
+      },
+      completed: event.completed
     }
 
-    if (event.event_status !== 'completed') {
-      game.completed = false
-      return game
-    } else {
-      game.completed = true
+    if (game.completed) {
+      game.rating = getRating(event)
     }
-
-    game.rating = getRating(event)
 
     return game
   })
