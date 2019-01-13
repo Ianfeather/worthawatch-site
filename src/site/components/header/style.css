@@ -1,10 +1,23 @@
 .title {
-  margin: 0;
+  margin: 0 0 20px;
   color: var(--pink);
   font-size: 40px;
 }
 
 .subtitle {
-  margin: 0;
   color: var(--light-grey);
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote {
+  font-style: italic;
+  margin: 0 0 5px;
+}
+
+.attribution {
+  font-weight: bold;
+  color: var(--light-grey);
+  text-decoration: none;
 }

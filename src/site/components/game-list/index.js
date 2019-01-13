@@ -39,7 +39,7 @@ export default class GameList extends Component {
   render ({ games }) {
     return (
       <div>
-        <h2 className='title center flex mb60'>Yesterday:</h2>
+        <h2 className='title center flex mb40'>Yesterday's games, rated for League Pass Degenerates</h2>
         <div className='games'>
           {
             games.sort(compareRatings).map((game) => (

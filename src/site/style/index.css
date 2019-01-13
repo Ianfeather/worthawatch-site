@@ -11,6 +11,9 @@
 .mb20 {
   margin-bottom: 20px;
 }
+.mb40 {
+  margin-bottom: 40px;
+}
 .mb60 {
   margin-bottom: 60px;
 }
@@ -34,7 +37,7 @@ body {
 
 .header {
   padding: 20px 40px 30px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   border-bottom: 2px solid #78758C;
   background-color: var(--dark-grey);
 }
