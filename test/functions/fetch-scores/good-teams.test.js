@@ -22,7 +22,7 @@ describe('Good Teams Rating', () => {
   })
 
   it('Two ok teams', () => {
-    expect(withTeams('TOR', 'DEN')).to.equal(BASE_RATING + 4)
+    expect(withTeams('POR', 'UTA')).to.equal(BASE_RATING + 4)
   })
 
   it('Two average teams', () => {
