@@ -1,6 +1,6 @@
 const getRating = require('./rating/aggregate')
 
-module.exports = (events) => {
+module.exports = ({events}) => {
   console.log('*** prepare game data')
   console.log(events)
   return events.map((event) => {
