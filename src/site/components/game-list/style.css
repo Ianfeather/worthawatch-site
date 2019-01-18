@@ -1,0 +1,11 @@
+.rating {
+  color: var(--dark-grey);
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.link {
+  margin-left: 5px;
+}

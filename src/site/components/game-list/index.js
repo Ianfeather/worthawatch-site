@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import styles from './style'
 
 const ratingClass = (rating) => {
   if (rating > 74) return 'rating-high'
@@ -39,7 +40,7 @@ export default class GameList extends Component {
   render ({ games }) {
     return (
       <div>
-        <h2 className='title center flex mb40'>Yesterday's games, rated for League Pass</h2>
+        <h2 className='center flex mb40'>Yesterday's games, rated for League Pass</h2>
         <div className='games'>
           {
             games.sort(compareRatings).map((game) => (
@@ -54,6 +55,8 @@ export default class GameList extends Component {
             ))
           }
         </div>
+        <p className={`${styles.rating} center flex mb40`}>Ratings are calculated using closeness, comebacks, individual and team performances.</p>
+        <p className={`${styles.rating} center flex mb40`}>If you take issue with the ratings contact <a className={styles.link} href="https://www.twitter.com/ianfeather/"> @ianfeather</a>!</p>
       </div>
     )
   }
