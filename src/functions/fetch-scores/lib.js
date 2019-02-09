@@ -11,6 +11,8 @@ const dynamodb = new AWS.DynamoDB.DocumentClient()
 
 module.exports = {
   getScores: function (event, cb) {
+    console.log('getting scores')
+    console.time('dbrequest')
     var getParams = {
       AttributesToGet: [ 'events' ],
       TableName: 'worthawatch-import-prod',
@@ -28,6 +30,9 @@ module.exports = {
       if (!data.Item) {
         return cb(null, { games: [] })
       }
+
+      console.log('duration of dbrequest')
+      console.timeEnd('dbrequest')
 
       return cb(null, { games: prepareGameData(data.Item.events) })
     })
