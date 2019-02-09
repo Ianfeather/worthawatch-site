@@ -34,7 +34,11 @@ module.exports = {
       console.log('duration of dbrequest')
       console.timeEnd('dbrequest')
 
-      return cb(null, { games: prepareGameData(data.Item.events) })
+      console.time('prepareDate')
+      let games = prepareGameData(data.Item.events)
+      console.timeEnd('prepareDate')
+
+      return cb(null, { games: games })
     })
   }
 }
