@@ -18,7 +18,8 @@
     "test": "npm run test-functions && npm run test-site",
     "test-functions": "mocha test/**/*.test.js",
     "test-functions-w": "mocha --watch test/**/*.test.js",
-    "test-site": "jest ./src/site/tests"
+    "test-site": "jest ./src/site/tests",
+    "upload": "node ./upload.js"
   },
   "dependencies": {
     "aws-sdk": "^2.320.0",
@@ -46,7 +47,8 @@
     "preact-cli": "^2.2.1",
     "preact-compat": "^3.17.0",
     "preact-render-spy": "^1.2.1",
-    "preact-router": "^2.5.7"
+    "preact-router": "^2.5.7",
+    "s3": "4.4.0"
   },
   "eslintConfig": {
     "extends": [
