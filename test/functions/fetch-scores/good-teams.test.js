@@ -14,11 +14,11 @@ const withTeams = (home, away) => getRating(
 
 describe('Good Teams Rating', () => {
   it('Two great teams', () => {
-    expect(withTeams('GSW', 'HOU')).to.equal(BASE_RATING + 10)
+    expect(withTeams('LAL', 'LAC')).to.equal(BASE_RATING + 10)
   })
 
   it('Two good teams', () => {
-    expect(withTeams('OKC', 'PHI')).to.equal(BASE_RATING + 6)
+    expect(withTeams('BOS', 'HOU')).to.equal(BASE_RATING + 6)
   })
 
   it('Two ok teams', () => {
@@ -30,6 +30,6 @@ describe('Good Teams Rating', () => {
   })
 
   it('One great, one average', () => {
-    expect(withTeams('GSW', 'DET')).to.equal(BASE_RATING + 5)
+    expect(withTeams('LAC', 'DET')).to.equal(BASE_RATING + 5)
   })
 })

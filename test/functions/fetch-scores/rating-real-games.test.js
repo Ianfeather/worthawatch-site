@@ -13,7 +13,7 @@ const realGames = require('./stubs/2017-2018.js')
 describe('Integration', () => {
   it('MINOKC_20171022 - game winning 3', () => {
     expect(getRating(realGames.MINOKC_20171022))
-      .to.be.greaterThan(80).and.to.be.lessThan(90)
+      .to.be.greaterThan(79).and.to.be.lessThan(90)
   })
 
   it('OKCPHI_20171215 - 3OT close game', () => {
@@ -33,7 +33,7 @@ describe('Integration', () => {
 
   it('GSWHOU_20180120 - 8 point win. Tricky one!', () => {
     expect(getRating(realGames.GSWHOU_20180120))
-      .to.be.greaterThan(74).and.to.be.lessThan(90)
+      .to.be.greaterThan(72).and.to.be.lessThan(90)
   })
 
   it('GSWBOS_20180127 - 4pt win - point guard duel', () => {
@@ -53,7 +53,7 @@ describe('Integration', () => {
 
   it('TORMIL_20180101 - win by 4 in OT - derozan has 52', () => {
     expect(getRating(realGames.TORMIL_20180101))
-      .to.be.greaterThan(90).and.to.be.lessThan(100)
+      .to.be.greaterThan(90).and.to.be.lessThan(101)
   })
 
   it('CLEWAS_20171103 - win by 8 - lebron has 57', () => {
