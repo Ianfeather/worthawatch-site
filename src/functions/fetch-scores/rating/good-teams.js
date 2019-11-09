@@ -1,18 +1,21 @@
 const goodTeams = {
-  GSW: 5,
-  HOU: 5,
-  LAL: 5,
-  BOS: 5,
 
-  PHI: 3,
-  OKC: 3,
+  LAL: 5,
+  LAC: 5,
+
+  MIL: 4,
+  PHI: 4,
+
+  BOS: 3,
+  HOU: 3,
   DEN: 3,
   TOR: 3,
-  MIL: 3,
 
   POR: 2,
   UTA: 2,
-  DAL: 2 // Lukaaaaaa
+  BKN: 2,
+  NOP: 2, // Zionnnnnn
+  DAL: 2  // Lukaaaaaa
 }
 
 module.exports = function ({ home_team, away_team }, rating) {
