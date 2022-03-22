@@ -1,4 +1,4 @@
-import { h, Component } from 'preact'
+import { h } from 'preact'
 import styles from './style'
 
 const ratingClass = (rating) => {
@@ -7,26 +7,24 @@ const ratingClass = (rating) => {
   return 'rating-low'
 }
 
-export class Game extends Component {
-  render ({ homeTeamName, awayTeamName, rating, homeImage, awayImage, completed }) {
-    return (
-      <div className='game flex'>
-        {
-          completed
-            ? <div className={`rating ${ratingClass(rating)}`}>{rating}</div>
-            : <div className='incomplete'>"N/A"</div>
-        }
-        <div className='team flex team-home'>
-          <img src={`assets/img/${homeImage}.gif`} />
-          <h2 className='team-name'>{homeTeamName}</h2>
-        </div>
-        <div className='team flex'>
-          <img src={`assets/img/${awayImage}.gif`} />
-          <h2 className='team-name'>{awayTeamName}</h2>
-        </div>
+export const Game = ({ homeTeamName, awayTeamName, rating, homeImage, awayImage, completed }) => {
+  return (
+    <div className='game flex'>
+      {
+        completed
+          ? <div className={`rating ${ratingClass(rating)}`}>{rating}</div>
+          : <div className='incomplete'>In play</div>
+      }
+      <div className='team flex team-home'>
+        <img src={`assets/img/${homeImage}.gif`} />
+        <h2 className='team-name'>{homeTeamName}</h2>
       </div>
-    )
-  }
+      <div className='team flex'>
+        <img src={`assets/img/${awayImage}.gif`} />
+        <h2 className='team-name'>{awayTeamName}</h2>
+      </div>
+    </div>
+  )
 }
 
 const compareRatings = (a, b) => {
@@ -36,28 +34,28 @@ const compareRatings = (a, b) => {
   return 0
 }
 
-export default class GameList extends Component {
-  render ({ games }) {
-    return (
-      <div>
-        <h2 className='center flex mb40'>Yesterday's games, rated for League Pass</h2>
-        <div className='games'>
-          {
-            games.sort(compareRatings).map((game) => (
-              <Game
-                homeImage={game.home.img.toLowerCase()}
-                homeTeamName={game.home.name}
-                awayImage={game.away.img.toLowerCase()}
-                awayTeamName={game.away.name}
-                rating={game.rating}
-                completed={game.completed}
-              />
-            ))
-          }
-        </div>
-        <p className={`${styles.rating} center flex mb40`}>Ratings are calculated using closeness, comebacks, individual and team performances.</p>
-        <p className={`${styles.rating} center flex mb40`}>If you take issue with the ratings contact <a className={styles.link} href="https://www.twitter.com/ianfeather/"> @ianfeather</a>!</p>
+const GameList = ({ games }) => {
+  return (
+    <div>
+      <h2 className='center flex mb40'>Yesterday's games, rated for League Pass</h2>
+      <div className='games'>
+        {
+          games.sort(compareRatings).map((game) => (
+            <Game
+              homeImage={game.home.abbreviation.toLowerCase()}
+              homeTeamName={game.home.name}
+              awayImage={game.away.abbreviation.toLowerCase()}
+              awayTeamName={game.away.name}
+              rating={game.rating}
+              completed={game.completed}
+            />
+          ))
+        }
       </div>
-    )
-  }
+      <p className={`${styles.rating} center flex mb40`}>Ratings are calculated using closeness, comebacks, individual and team performances.</p>
+      <p className={`${styles.rating} center flex mb40`}>If you take issue with the ratings contact <a className={styles.link} href="https://www.twitter.com/ianfeather/"> @ianfeather</a>!</p>
+    </div>
+  )
 }
+
+export default GameList;

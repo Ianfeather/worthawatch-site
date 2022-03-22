@@ -9,11 +9,11 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "dev": "preact watch --src=src/site --template src/site/html/template.html",
+    "serve": "sirv build --port 8080 --cors --single",
+    "dev": "preact watch --src=src/site",
     "build": "npm run build-site && npm run build-functions",
     "build-functions": "netlify-lambda build src/functions --config ./webpack.config.js",
-    "build-site": "preact build --src=src/site --template src/site/html/template.html --no-service-worker && npm run service-worker",
-    "service-worker": "cp src/site/sw.js build/",
+    "build-site": "preact build --src=src/site",
     "lint": "eslint src/site",
     "test": "npm run test-functions && npm run test-site",
     "test-functions": "mocha test/**/*.test.js",
@@ -32,56 +32,34 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
-    "eslint": "^4.9.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-config-standard-preact": "^1.1.6",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^3.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-preact-pure": "^2.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-preact": "^1.1.0",
     "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.0",
-    "jest": "^21.2.1",
+    "jest": "^24.9.0",
+    "jest-preset-preact": "^1.0.0",
     "mocha": "^5.2.0",
     "node-fetch": "1.7.3",
-    "preact": "^8.3.1",
-    "preact-cli": "^2.0.0",
-    "preact-compat": "^3.17.0",
-    "preact-render-spy": "^1.2.1",
-    "preact-router": "^2.5.7"
+    "preact-cli": "^3.0.0",
+    "preact-router": "^3.2.1",
+    "preact": "^10.3.2",
+    "preact-render-to-string": "^5.1.4",
+    "sirv-cli": "1.0.3"
   },
   "eslintConfig": {
-    "extends": [
-      "standard",
-      "standard-preact"
+    "extends": "preact",
+    "ignorePatterns": [
+      "src/build/",
+      "build/*"
     ]
   },
-  "eslintIgnore": [
-    "build/*"
-  ],
   "jest": {
-    "verbose": true,
+    "preset": "jest-preset-preact",
     "setupFiles": [
-      "<rootDir>/src/site/tests/__mocks__/browserMocks.js"
-    ],
-    "testURL": "http://localhost:8080",
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
-      "\\.(css|less|scss)$": "identity-obj-proxy",
-      "^./style$": "identity-obj-proxy",
-      "^preact$": "<rootDir>/node_modules/preact/dist/preact.min.js",
-      "^react$": "preact-compat",
-      "^react-dom$": "preact-compat",
-      "^create-react-class$": "preact-compat/lib/create-react-class",
-      "^react-addons-css-transition-group$": "preact-css-transition-group"
-    }
+      "<rootDir>/src/tests/__mocks__/browserMocks.js",
+      "<rootDir>/src/tests/__mocks__/setupTests.js"
+    ]
   }
 }

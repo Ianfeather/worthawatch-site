@@ -18,7 +18,7 @@ function parseQuery (qstr) {
 function getYesterdaysDate () {
   let date = new Date()
   date.setDate(date.getDate() - 1)
-  return `${date.getFullYear()}${zeroPad(date.getMonth() + 1)}${zeroPad(date.getDate())}`
+  return `${date.getFullYear()}-${zeroPad(date.getMonth() + 1)}-${zeroPad(date.getDate())}`
 }
 
 function getDate () {

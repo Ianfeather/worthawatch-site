@@ -1,41 +1,39 @@
 /* global window */
 
 import { h, Component } from 'preact'
-
+import {useEffect, useState} from "preact/hooks";
 import loadResults from './load-results'
 import GameList from '../../components/game-list'
 import NoResults from '../../components/no-results'
 
-export default class Results extends Component {
-  constructor () {
-    super()
-    this.state.fetching = true
-    this.state.games = []
-  }
+const Results = () => {
+  const [fetching, setFetching] = useState(true);
+  const [games, setGames] = useState([]);
 
-  componentDidMount () {
-    loadResults()
-      .then(({ games }) => {
-        this.setState({ games, fetching: false })
-      })
-      .catch(e => {
-        console.error(e)
-        this.setState({ games: [], fetching: false })
-      })
+  useEffect(async () => {
+    try {
+      const { games } = await loadResults()
 
+      setGames(games)
+      setFetching(false)
+    } catch (e) {
+      console.error(e)
+      setGames([])
+      setFetching(false)
+    }
     window.addEventListener('beforeinstallprompt', () => {
       console.log('BEFORE INSTALL EVENT')
     })
-  }
+  }, []);
 
-  render (props, state) {
-    if (state.fetching) {
-      return (
-        <div class='flex flex-column'>
-          <div class='flex center mb20'>Fetching yesterday's results...</div>
-        </div>
-      )
-    }
-    return this.state.games.length ? <GameList games={this.state.games} /> : <NoResults />
+  if (fetching) {
+    return (
+      <div class='flex flex-column'>
+        <div class='flex center mb20'>Fetching yesterday's results...</div>
+      </div>
+    )
   }
+  return !!games.length ? <GameList games={games} /> : <NoResults />
 }
+
+export default Results;
