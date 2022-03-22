@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "preact watch --src=src/site --template src/site/html/template.html",
     "build": "npm run build-site && npm run build-functions",
-    "build-functions": "netlify-lambda build src/functions",
+    "build-functions": "netlify-lambda build src/functions --config ./webpack.config.js",
     "build-site": "preact build --src=src/site --template src/site/html/template.html --no-service-worker && npm run service-worker",
     "service-worker": "cp src/site/sw.js build/",
     "lint": "eslint src/site",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "aws-sdk": "^2.320.0",
-    "netlify-lambda": "^0.4.0",
+    "nba": "4.15.0",
+    "netlify-cli": "^9.13.3",
+    "netlify-lambda": "^2.0.15",
     "request": "^2.87.0"
   },
   "devDependencies": {
@@ -42,8 +44,9 @@
     "if-env": "^1.0.0",
     "jest": "^21.2.1",
     "mocha": "^5.2.0",
+    "node-fetch": "1.7.3",
     "preact": "^8.3.1",
-    "preact-cli": "^2.2.1",
+    "preact-cli": "^2.0.0",
     "preact-compat": "^3.17.0",
     "preact-render-spy": "^1.2.1",
     "preact-router": "^2.5.7"

@@ -2,3 +2,4 @@
   functions = "./functions"
   command = "npm t && npm run build"
   publish = "./build"
+  node_bundler = "esbuild"
