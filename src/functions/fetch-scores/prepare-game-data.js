@@ -4,6 +4,7 @@ module.exports = (data) => {
   return data.gameHeader.map(({ gameId, homeTeamId, visitorTeamId, gameStatusText }) => {
 
     const mapper = team => ({
+      id: team.teamId,
       name: team.teamCityName,
       abbreviation: team.teamAbbreviation,
       total: team.pts,
