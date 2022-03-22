@@ -5,29 +5,20 @@ function smoothRating (rating) {
   return parseInt(Math.min(rating, 100), 10)
 }
 
-function isOvertime (event) {
-  return event.away_period_scores.length > 4
-}
-
 module.exports = (event, BASE_RATING = 80) => {
-  let diff = Math.abs(event.home_points_scored - event.away_points_scored)
+  let diff = Math.abs(event.home.total - event.away.total)
 
   let comebackMultiplier = getComebackMultiplier(event)
   let overtimeMultiplier = getOvertimeMultiplier(event)
 
-  // If it goes to overtime we should boost the rating
-  if (isOvertime(event)) {
-    return smoothRating(BASE_RATING * comebackMultiplier * overtimeMultiplier)
-  }
-
   // If there's a potential buzzer beater
   if (diff < 4) {
-    return smoothRating(BASE_RATING * comebackMultiplier)
+    return smoothRating(BASE_RATING * comebackMultiplier * overtimeMultiplier)
   }
 
   // Close but not decided on the last plays
   if (diff < 7) {
-    return smoothRating((BASE_RATING - 5) * comebackMultiplier)
+    return smoothRating((BASE_RATING - 5) * comebackMultiplier * overtimeMultiplier)
   }
 
   // Close but not a buzzer-beater loses 10 points

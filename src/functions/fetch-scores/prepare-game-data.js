@@ -1,21 +1,34 @@
 const getRating = require('./rating/aggregate')
 
-module.exports = ({events}) => {
-  return events.map((event) => {
+module.exports = (data) => {
+  return data.gameHeader.map(({ gameId, homeTeamId, visitorTeamId, gameStatusText }) => {
+
+    const mapper = team => ({
+      name: team.teamCityName,
+      abbreviation: team.teamAbbreviation,
+      total: team.pts,
+      quarterTotals: [team.ptsQtr1, team.ptsQtr2, team.ptsQtr3, team.ptsQtr4],
+      otTotals: [team.ptsOt1, team.ptsOt2, team.ptsOt3]
+    });
+
+    let home = data.lineScore
+      .filter(({ teamId }) => teamId === homeTeamId)
+      .map(mapper)
+      .reduce((acc, next) => next, {});
+
+    let away = data.lineScore
+      .filter(({ teamId }) => teamId === visitorTeamId)
+      .map(mapper)
+      .reduce((acc, next) => next, {});
+
     let game = {
-      home: {
-        name: `${event.home_team.first_name} ${event.home_team.last_name}`,
-        img: event.home_team.abbreviation
-      },
-      away: {
-        name: `${event.away_team.first_name} ${event.away_team.last_name}`,
-        img: event.away_team.abbreviation
-      },
-      completed: event.completed
+      home,
+      away,
+      completed: gameStatusText === 'Final'
     }
 
     if (game.completed) {
-      game.rating = getRating(event)
+      game.rating = getRating(game)
     }
 
     return game

@@ -2,11 +2,11 @@ module.exports = function (event) {
   // This is naive because we only have quarter scores
   // The best way would be a biggest lead stat
 
-  let winningTeam = event.home_points_scored > event.away_points_scored ? 'home' : 'away'
-  let losingTeam = event.home_points_scored > event.away_points_scored ? 'away' : 'home'
+  let winningTeam = event.home.total > event.away.total ? 'home' : 'away'
+  let losingTeam = event.home.total > event.away.total ? 'away' : 'home'
 
-  let quarterDiffs = event[`${winningTeam}_period_scores`].map((score, index) => {
-    return score - event[`${losingTeam}_period_scores`][index]
+  let quarterDiffs = event[`${winningTeam}`].quarterTotals.map((score, index) => {
+    return score - event[`${losingTeam}`][index]
   })
 
   // If the team was down by 30 at half time
