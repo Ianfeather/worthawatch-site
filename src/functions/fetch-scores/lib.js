@@ -14,5 +14,9 @@ module.exports = {
 
         return cb(null, data)
       })
+      .catch(e => {
+        console.error(e);
+        return cb(null, [])
+      }
   }
 }
