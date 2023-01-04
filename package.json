@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.320.0",
-    "netlify-lambda": "^0.4.0",
+    "netlify-lambda": "^2.0.15",
     "request": "^2.87.0"
   },
   "devDependencies": {
@@ -40,10 +40,10 @@
     "eslint-plugin-standard": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.0",
-    "jest": "^21.2.1",
+    "jest": "^29.3.1",
     "mocha": "^5.2.0",
     "preact": "^8.3.1",
-    "preact-cli": "^2.2.1",
+    "preact-cli": "^3.4.3",
     "preact-compat": "^3.17.0",
     "preact-render-spy": "^1.2.1",
     "preact-router": "^2.5.7"
